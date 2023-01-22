@@ -1,7 +1,5 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import quicksand from "@/lib/quicksand";
 
 export default function Home() {
   return (
@@ -11,7 +9,9 @@ export default function Home() {
         <meta name="description" content="A weather app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main>Hello, world!</main>
+      <main>
+        <h1 className={quicksand.className}>Hello, world!</h1>
+      </main>
     </>
   );
 }
