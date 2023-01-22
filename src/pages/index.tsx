@@ -9,8 +9,15 @@ export default function Home() {
         <meta name="description" content="A weather app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main>
-        <h1 className={quicksand.className}>Hello, world!</h1>
+      <main className="max-w-3xl mx-auto">
+        <h1
+          className={`${quicksand.className} text-4xl mb-2 mt-6 text-teal-800`}
+        >
+          Fun Weather App
+        </h1>
+        <p className="text-base text-gray-700">
+          Check the weather in your city before you head out for fun!
+        </p>
       </main>
     </>
   );
