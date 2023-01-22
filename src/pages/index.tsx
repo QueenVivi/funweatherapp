@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import quicksand from "@/lib/quicksand";
 import Search from "../components/search/Search";
+import WeatherResult from "@/components/WeatherResult";
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -28,6 +29,7 @@ export default function Home() {
             Check the weather in your city before you head out for fun!
           </p>
           <Search sendData={onGetData} />
+          <WeatherResult data={data} />
         </main>
         <footer className="text-sm text-gray-600 py-6">
           Powered by{" "}
