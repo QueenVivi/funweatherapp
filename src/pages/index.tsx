@@ -1,8 +1,15 @@
+import { useState } from "react";
 import Head from "next/head";
 import quicksand from "@/lib/quicksand";
 import Search from "../components/search/Search";
 
 export default function Home() {
+  const [data, setData] = useState(null);
+
+  const onGetData = (data) => {
+    setData(data);
+  };
+
   return (
     <>
       <Head>
@@ -20,7 +27,7 @@ export default function Home() {
           <p className="text-base text-gray-700">
             Check the weather in your city before you head out for fun!
           </p>
-          <Search />
+          <Search sendData={onGetData} />
         </main>
         <footer className="text-sm text-gray-600 py-6">
           Powered by{" "}

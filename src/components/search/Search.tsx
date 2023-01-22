@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
-const Search = () => {
+const Search = ({ sendData }) => {
   const [city, setCity] = useState("");
-  const [data, setData] = useState(null);
 
   const apiKey = `6e3c80dd3f1ec415fbe9f7176142a50c`;
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -15,7 +14,7 @@ const Search = () => {
         return response.json();
       })
       .then((data) => {
-        setData(data);
+        sendData(data);
       });
   };
 
