@@ -8,7 +8,7 @@ const Search = () => {
   const apiKey = `6e3c80dd3f1ec415fbe9f7176142a50c`;
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: React.SyntheticEvent) => {
     e.preventDefault();
     fetch(apiUrl)
       .then((response) => {
@@ -19,8 +19,8 @@ const Search = () => {
       });
   };
 
-  const cityHandler = (e) => {
-    setCity(e.target.value);
+  const cityHandler = (e: React.FormEvent<HTMLInputElement>) => {
+    setCity(e.currentTarget.value);
   };
 
   return (
