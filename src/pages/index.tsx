@@ -9,16 +9,28 @@ export default function Home() {
         <meta name="description" content="A weather app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="max-w-3xl mx-auto">
-        <h1
-          className={`${quicksand.className} text-4xl mb-2 mt-6 text-teal-800`}
-        >
-          Fun Weather App
-        </h1>
-        <p className="text-base text-gray-700">
-          Check the weather in your city before you head out for fun!
-        </p>
-      </main>
+      <div className="max-w-3xl mx-auto px-6">
+        <main className="min-h-[calc(100vh-68px)] pt-6 md:pt-12">
+          <h1
+            className={`${quicksand.className} text-3xl md:text-4xl mb-2 text-teal-800`}
+          >
+            Fun Weather App
+          </h1>
+          <p className="text-base text-gray-700">
+            Check the weather in your city before you head out for fun!
+          </p>
+        </main>
+        <footer className="text-sm text-gray-600 py-6">
+          Powered by{" "}
+          <a href="https://openweathermap.org/" className="underline">
+            Weather API
+          </a>{" "}
+          • Illustrations by{" "}
+          <a href="https://storyset.com/" className="underline">
+            Storyset
+          </a>
+        </footer>
+      </div>
     </>
   );
 }
