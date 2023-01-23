@@ -1,21 +1,17 @@
 import { useState } from "react";
+import axios from "axios";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
 const Search = ({ sendData }) => {
   const [city, setCity] = useState("");
 
-  const apiKey = `6e3c80dd3f1ec415fbe9f7176142a50c`;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
   const submitHandler = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    fetch(apiUrl)
-      .then((response) => {
-        return response.json();
+    axios
+      .get("/api/weather", {
+        params: { q: city },
       })
-      .then((data) => {
-        sendData(data);
-      });
+      .then((res) => sendData(res.data));
   };
 
   const cityHandler = (e: React.FormEvent<HTMLInputElement>) => {

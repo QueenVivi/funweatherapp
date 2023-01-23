@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import quicksand from "@/lib/quicksand";
-import Search from "../components/search/Search";
+import Search from "../components/Search/Search";
 import WeatherResult from "@/components/WeatherResult";
 
 export default function Home() {
