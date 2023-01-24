@@ -3,11 +3,12 @@ import Head from "next/head";
 import quicksand from "@/lib/quicksand";
 import Search from "../components/Search/Search";
 import WeatherResult from "@/components/WeatherResult";
+import WeatherData from "@/interfaces/WeatherData";
 
 export default function Home() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<WeatherData | null>(null);
 
-  const onGetData = (data) => {
+  const onGetData = (data: WeatherData) => {
     setData(data);
   };
 

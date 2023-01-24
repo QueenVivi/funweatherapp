@@ -1,6 +1,7 @@
 import axios from "axios";
+import { NextApiRequest, NextApiResponse } from "next";
 
-const weather = async (req, res) => {
+const weather = async (req: NextApiRequest, res: NextApiResponse) => {
   const apiKey = process.env.API_KEY;
   const apiUrl = "http://api.weatherapi.com/v1/current.json";
 
