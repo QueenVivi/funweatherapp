@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
-const Search = ({ sendData }: { sendData: Function }) => {
+const WeatherSearch = ({ sendData }: { sendData: Function }) => {
   const [city, setCity] = useState("");
 
   const submitHandler = (e: React.SyntheticEvent) => {
@@ -37,4 +37,4 @@ const Search = ({ sendData }: { sendData: Function }) => {
   );
 };
 
-export default Search;
+export default WeatherSearch;
