@@ -28,9 +28,9 @@ const WeatherResultHeader: FC<Props> = ({ theme, locationName, date }) => {
   const hour = date.getHours();
 
   return (
-    <header className="mb-2">
+    <header className="mb-4 md:mb-6">
       <h2
-        className={`${quicksand.className} text-title text-2xl md:text-4xl font-bold`}
+        className={`${quicksand.className} text-title font-bold mb-1 md:mb-2 text-3xl md:text-4xl`}
       >
         {heading(theme)}
       </h2>

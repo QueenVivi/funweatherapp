@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const Footer: FC = () => (
-  <footer className="text-sm text-gray-600 py-6">
+  <footer className="text-title text-sm text-gray-600 py-6 md:mt-4">
     Powered by{" "}
     <a
       href="https://weatherapi.com"
