@@ -5,13 +5,14 @@ import { Theme } from "@/lib/theme";
 import WeatherData from "@/interfaces/WeatherData";
 import Header from "./WeatherResultHeader";
 import Temp from "./WeatherResultTemp";
+import Details from "./WeatherResultDetails";
 
 interface Props {
   data: WeatherData | undefined;
   theme?: Theme;
 }
 
-const IMAGE_SIZE = 370;
+const IMAGE_SIZE = 327;
 
 const WeatherResult: FC<Props> = ({ data, theme = Theme.Fallback }) => {
   const locationName = data?.location?.name;
@@ -24,10 +25,11 @@ const WeatherResult: FC<Props> = ({ data, theme = Theme.Fallback }) => {
     >
       <div
         className={cn(
-          ["p-6", "flex", "flex-col"],
+          ["flex", "flex-col"],
           theme !== Theme.Fallback
             ? [
-                ["justify-center", `min-h-[${IMAGE_SIZE}px]`],
+                "justify-center",
+                `min-h-[${IMAGE_SIZE}px]`,
                 "md:flex-row",
                 "max-md:relative",
               ]
@@ -35,33 +37,52 @@ const WeatherResult: FC<Props> = ({ data, theme = Theme.Fallback }) => {
         )}
       >
         {data && (
-          <div className="grow">
+          <div className="p-6 grow z-10">
             <Header theme={theme} locationName={locationName} date={date} />
-            <Temp
-              temp_c={data?.current?.temp_c}
-              temp_f={data?.current?.temp_f}
-            />
-            <ul>
-              <li>{data.current.wind_kph}km/h</li>
-              <li>{data.current.humidity}%</li>
-              <li>{data.current.precip_mm}mm</li>
-            </ul>
+            <div className="flex flex-col gap-2 md:flex-row md:gap-8">
+              <Temp
+                temp_c={data?.current?.temp_c}
+                temp_f={data?.current?.temp_f}
+              />
+              <Details
+                details={[
+                  {
+                    label: "Wind",
+                    data: data?.current?.wind_kph,
+                    metric: "km/h",
+                  },
+                  {
+                    label: "Humidity",
+                    data: data?.current?.humidity,
+                    metric: "%",
+                  },
+                  {
+                    label: "Precipitation",
+                    data: data?.current?.precip_mm,
+                    metric: "mm",
+                  },
+                ]}
+              />
+            </div>
           </div>
         )}
-        <Image
-          className={cn(
-            theme !== Theme.Fallback && [
-              "max-md:absolute",
-              "max-md:bottom-0",
-              "max-md:right-0",
-              "max-md:opacity-30",
-            ]
-          )}
-          src={`images/${theme}.svg`}
-          alt="Illustration showing four seasons"
-          width={IMAGE_SIZE}
-          height={IMAGE_SIZE}
-        />
+        <div>
+          <Image
+            className={cn(
+              theme !== Theme.Fallback && [
+                "max-md:absolute",
+                "max-md:bottom-0",
+                "max-md:right-0",
+                "max-md:opacity-30",
+                "max-md:z-0",
+              ]
+            )}
+            src={`images/${theme}.svg`}
+            alt="Illustration showing four seasons"
+            width={IMAGE_SIZE}
+            height={IMAGE_SIZE}
+          />
+        </div>
       </div>
     </article>
   );
