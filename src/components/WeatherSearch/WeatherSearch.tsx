@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { HiMagnifyingGlass } from "react-icons/hi2";
+import Icon from "@/components/Icon";
 
 const WeatherSearch = ({ onGetData }: { onGetData: Function }) => {
   const [city, setCity] = useState("");
@@ -22,7 +22,7 @@ const WeatherSearch = ({ onGetData }: { onGetData: Function }) => {
     <form onSubmit={submitHandler}>
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
-          <HiMagnifyingGlass className="text-gray-500" />
+          <Icon.Search />
         </div>
         <input
           onChange={cityHandler}
