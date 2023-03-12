@@ -22,8 +22,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Layout theme={theme}>
-        <WeatherSearch onGetData={setData} />
-        <WeatherResult data={data} theme={theme} />
+        <div className="flex flex-col gap-6 md:gap-10">
+          <WeatherSearch onGetData={setData} />
+          <WeatherResult data={data} theme={theme} />
+        </div>
       </Layout>
     </>
   );
