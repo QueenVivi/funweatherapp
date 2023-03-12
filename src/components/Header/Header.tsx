@@ -1,6 +1,7 @@
+import { FC } from "react";
 import quicksand from "@/lib/quicksand";
 
-const Header = () => (
+const Header: FC = () => (
   <header className="mt-6 mb-4 md:mt-16 md:mb-6">
     <h1
       className={`${quicksand.className} text-3xl md:text-4xl mb-2 text-title`}
