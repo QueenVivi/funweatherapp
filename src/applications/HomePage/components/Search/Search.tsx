@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Icon from "@/components/Icon";
 
-const WeatherSearch = ({ onGetData }: { onGetData: Function }) => {
+const Search = ({ onGetData }: { onGetData: Function }) => {
   const [city, setCity] = useState("");
 
   const submitHandler = (e: React.SyntheticEvent) => {
@@ -35,4 +35,4 @@ const WeatherSearch = ({ onGetData }: { onGetData: Function }) => {
   );
 };
 
-export default WeatherSearch;
+export default Search;

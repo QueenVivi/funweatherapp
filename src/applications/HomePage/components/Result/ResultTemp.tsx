@@ -12,7 +12,7 @@ interface Props {
   temp_f: number | undefined;
 }
 
-const WeatherResultTemp: FC<Props> = ({ temp_c, temp_f }) => {
+const ResultTemp: FC<Props> = ({ temp_c, temp_f }) => {
   const [metric, setMetric] = useState<Metric>(Metric.C);
 
   const isC = metric === Metric.C;
@@ -42,4 +42,4 @@ const WeatherResultTemp: FC<Props> = ({ temp_c, temp_f }) => {
   );
 };
 
-export default WeatherResultTemp;
+export default ResultTemp;

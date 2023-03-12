@@ -3,9 +3,9 @@ import Image from "next/image";
 import cn from "classnames";
 import { Theme } from "@/lib/theme";
 import WeatherData from "@/interfaces/WeatherData";
-import Header from "./WeatherResultHeader";
-import Temp from "./WeatherResultTemp";
-import Details from "./WeatherResultDetails";
+import Header from "./ResultHeader";
+import Temp from "./ResultTemp";
+import Details from "./ResultDetails";
 
 interface Props {
   data: WeatherData | undefined;
@@ -14,7 +14,7 @@ interface Props {
 
 const IMAGE_SIZE = 327;
 
-const WeatherResult: FC<Props> = ({ data, theme = Theme.Fallback }) => {
+const Result: FC<Props> = ({ data, theme = Theme.Fallback }) => {
   const locationName = data?.location?.name;
   const dateString = data?.current.last_updated || Date();
   const date = new Date(dateString);
@@ -88,4 +88,4 @@ const WeatherResult: FC<Props> = ({ data, theme = Theme.Fallback }) => {
   );
 };
 
-export default WeatherResult;
+export default Result;

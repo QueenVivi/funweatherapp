@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import WeatherData from "@/interfaces/WeatherData";
 import { getTheme, Theme } from "@/lib/theme";
 import Layout from "@/components/Layout";
-import WeatherSearch from "@/components/WeatherSearch";
-import WeatherResult from "@/components/WeatherResult";
-import WeatherData from "@/interfaces/WeatherData";
+import Search from "./components/Search";
+import Result from "./components/Result";
 
-export default function Home() {
+const HomePage = () => {
   const [data, setData] = useState<WeatherData | undefined>(undefined);
   const [theme, setTheme] = useState<Theme>(Theme.Fallback);
 
@@ -23,10 +23,12 @@ export default function Home() {
       </Head>
       <Layout theme={theme}>
         <div className="flex flex-col gap-6 md:gap-10">
-          <WeatherSearch onGetData={setData} />
-          <WeatherResult data={data} theme={theme} />
+          <Search onGetData={setData} />
+          <Result data={data} theme={theme} />
         </div>
       </Layout>
     </>
   );
-}
+};
+
+export default HomePage;

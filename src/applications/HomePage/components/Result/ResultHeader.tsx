@@ -23,7 +23,7 @@ const heading = (theme: Theme): string => {
   }
 };
 
-const WeatherResultHeader: FC<Props> = ({ theme, locationName, date }) => {
+const ResultHeader: FC<Props> = ({ theme, locationName, date }) => {
   const weekday = date.toLocaleDateString("en-US", { weekday: "long" });
   const hour = date.getHours();
 
@@ -42,4 +42,4 @@ const WeatherResultHeader: FC<Props> = ({ theme, locationName, date }) => {
   );
 };
 
-export default WeatherResultHeader;
+export default ResultHeader;

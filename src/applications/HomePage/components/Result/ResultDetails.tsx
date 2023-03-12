@@ -8,7 +8,7 @@ interface Props {
   }[];
 }
 
-const WeatherResultDetails: FC<Props> = ({ details }) => {
+const ResultDetails: FC<Props> = ({ details }) => {
   if (!details.length) return null;
 
   return (
@@ -29,4 +29,4 @@ const WeatherResultDetails: FC<Props> = ({ details }) => {
   );
 };
 
-export default WeatherResultDetails;
+export default ResultDetails;
