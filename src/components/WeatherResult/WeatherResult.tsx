@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 import { Theme } from "@/lib/theme";
-import quicksand from "@/lib/quicksand";
-import WeatherData from "@/interfaces/WeatherData";
 
+import WeatherData from "@/interfaces/WeatherData";
+import Header from "./WeatherResultHeader";
 interface Props {
   data: WeatherData | undefined;
   theme?: Theme;
@@ -12,10 +12,10 @@ interface Props {
 const WeatherResult: FC<Props> = ({ data, theme = Theme.Fallback }) => {
   const [isCelsiusShown, setIsCelsiusShown] = useState(true);
 
+  const locationName = data?.location?.name;
   const dateString = data?.current.last_updated || Date();
   const date = new Date(dateString);
-  const weekday = date.toLocaleDateString("en-US", { weekday: "long" });
-  const hour = date.getHours();
+
   const toggleUnitHandler = () => {
     setIsCelsiusShown(!isCelsiusShown);
   };
@@ -24,15 +24,7 @@ const WeatherResult: FC<Props> = ({ data, theme = Theme.Fallback }) => {
     <article>
       {data && (
         <div>
-          <div className="mb-2">
-            <h2 className={`${quicksand.className} text-2xl font-bold`}>
-              {data.current.condition.text}
-            </h2>
-            <p className="text-sm font-normal">
-              in {data.location.name} • {weekday} {hour}
-              {hour >= 12 ? "pm" : "am"}
-            </p>
-          </div>
+          <Header theme={theme} locationName={locationName} date={date} />
           <div className="flex flex-row gap-2">
             <h2>
               {isCelsiusShown
@@ -46,7 +38,6 @@ const WeatherResult: FC<Props> = ({ data, theme = Theme.Fallback }) => {
               height="16"
               onClick={toggleUnitHandler}
             />
-            {/* <h2>{data.current.temp_f}°F</h2> */}
           </div>
           <ul>
             <li>{data.current.wind_kph}km/h</li>
