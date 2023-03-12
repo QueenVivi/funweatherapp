@@ -34,6 +34,8 @@ const WeatherResult = ({ data }: { data: WeatherData | null }) => {
         <Image
           src="images/toggle.svg"
           alt="toggle button to switch between celcius and farenheit"
+          width="16"
+          height="16"
           onClick={toggleUnitHandler}
         />
         {/* <h2>{data.current.temp_f}°F</h2> */}

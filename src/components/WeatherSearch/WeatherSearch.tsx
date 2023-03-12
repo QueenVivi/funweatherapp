@@ -28,7 +28,7 @@ const WeatherSearch = ({ onGetData }: { onGetData: Function }) => {
           onChange={cityHandler}
           type="text"
           placeholder="e.g. Sydney"
-          className="border-solid border-2 rounded-2xl bg-white  border-teal-500 py-2 px-3 block w-full leading-5 pl-10"
+          className="border-solid border-2 rounded-2xl bg-white  border-border py-2 px-3 block w-full leading-5 pl-10"
         />
       </div>
     </form>
