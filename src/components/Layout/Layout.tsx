@@ -1,14 +1,7 @@
 import { FC, ReactNode } from "react";
+import { Theme } from "@/lib/theme";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-
-enum Theme {
-  Fallback = "fallback",
-  Sunny = "sunny",
-  Rainy = "rainy",
-  Cloudy = "cloudy",
-  Snowy = "snowy",
-}
 
 interface Props {
   children: ReactNode;
