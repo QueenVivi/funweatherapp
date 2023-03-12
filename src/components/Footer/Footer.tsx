@@ -1,8 +1,10 @@
-const Footer = () => (
-  <footer className="text-sm text-gray-600 py-6">
+import { FC } from "react";
+
+const Footer: FC = () => (
+  <footer className="text-title text-sm text-gray-600 py-6 md:mt-4">
     Powered by{" "}
     <a
-      href="https://openweathermap.org/"
+      href="https://weatherapi.com"
       target="_blank"
       rel="noreferrer"
       className="underline"

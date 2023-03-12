@@ -1,6 +1,7 @@
 interface WeatherData {
   current: {
     condition: {
+      code: number;
       text: string;
     };
     last_updated: string;
