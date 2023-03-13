@@ -21,15 +21,25 @@ const Search = ({ onGetData }: { onGetData: Function }) => {
   return (
     <form onSubmit={submitHandler}>
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center">
+        <label
+          className="absolute inset-y-0 left-0 pl-3 flex items-center"
+          htmlFor="search"
+        >
           <Icon.Search />
-        </div>
+        </label>
         <input
           onChange={cityHandler}
+          id="search"
           type="text"
           placeholder="e.g. Sydney"
-          className="border-solid border-2 rounded-2xl bg-white  border-border py-2 px-3 block w-full leading-5 pl-10"
+          className="peer border-solid border-2 border-primary rounded-2xl bg-white py-2 px-3 block w-full leading-5 pl-10"
         />
+        <button
+          className="invisible peer-focus:visible bg-primary text-white absolute right-1 top-1 px-4 py-1 rounded-xl"
+          type="submit"
+        >
+          Search
+        </button>
       </div>
     </form>
   );
