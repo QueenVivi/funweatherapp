@@ -27,12 +27,7 @@ const Result: FC<Props> = ({ data, theme = Theme.Fallback }) => {
         className={cn(
           ["flex", "flex-col"],
           theme !== Theme.Fallback
-            ? [
-                "justify-center",
-                `min-h-[${IMAGE_SIZE}px]`,
-                "md:flex-row",
-                "max-md:relative",
-              ]
+            ? ["justify-center", "md:flex-row", "max-md:relative"]
             : "items-center"
         )}
       >
@@ -70,6 +65,7 @@ const Result: FC<Props> = ({ data, theme = Theme.Fallback }) => {
           <Image
             className={cn(
               theme !== Theme.Fallback && [
+                "max-h-full",
                 "max-md:absolute",
                 "max-md:bottom-0",
                 "max-md:right-0",

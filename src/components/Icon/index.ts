@@ -1,7 +1,9 @@
 import Toggle from "./IconToggle";
 import Search from "./IconSearch";
 
-export default {
+const Icon = {
   Toggle,
   Search,
 };
+
+export default Icon;
