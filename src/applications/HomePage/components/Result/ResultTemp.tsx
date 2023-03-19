@@ -24,21 +24,19 @@ const ResultTemp: FC<Props> = ({ temp_c, temp_f }) => {
   if (!temp_c || !temp_f) return null;
 
   return (
-    <div>
-      <button className="flex-none" onClick={toggleUnitHandler}>
-        <div className={`${quicksand.className} flex flex-row items-center`}>
-          <span className="text-4xl md:text-7xl font-bold text-title">
-            {isC ? temp_c : temp_f}
-          </span>
-          <span className="text-2xl md:text-4xl font-bold text-title">
-            °{isC ? "C" : "F"}
-          </span>
-          <div className="ml-4">
-            <Icon.Toggle />
-          </div>
+    <button data-testid="temp-toggle-button" onClick={toggleUnitHandler}>
+      <div className={`${quicksand.className} flex flex-row items-center`}>
+        <span className="text-4xl md:text-7xl font-bold text-title">
+          {isC ? temp_c : temp_f}
+        </span>
+        <span className="text-2xl md:text-4xl font-bold text-title">
+          °{isC ? "C" : "F"}
+        </span>
+        <div className="ml-4">
+          <Icon.Toggle />
         </div>
-      </button>
-    </div>
+      </div>
+    </button>
   );
 };
 

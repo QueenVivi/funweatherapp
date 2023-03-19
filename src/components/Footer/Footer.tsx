@@ -20,6 +20,8 @@ const Footer: FC = () => (
     >
       Storyset
     </a>
+    • &copy; Copyright{" "}
+    <span data-testid="currentYear">{new Date().getFullYear()}</span>
   </footer>
 );
 

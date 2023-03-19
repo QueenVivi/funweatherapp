@@ -35,7 +35,7 @@ const Search = ({ onGetData }: { onGetData: Function }) => {
           className="peer border-solid border-2 border-primary rounded-2xl bg-white py-2 px-3 block w-full leading-5 pl-10"
         />
         <button
-          className="invisible peer-focus:visible bg-primary text-white absolute right-1 top-1 px-4 py-1 rounded-xl"
+          className="opacity-0 peer-focus:opacity-100 peer-hover:opacity-100 bg-primary text-white absolute right-1 top-1 px-4 py-1 rounded-xl"
           type="submit"
         >
           Search

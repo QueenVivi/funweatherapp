@@ -32,7 +32,7 @@ const Result: FC<Props> = ({ data, theme = Theme.Fallback }) => {
         )}
       >
         {data && (
-          <div className="p-6 grow z-10">
+          <div className="p-6 grow z-10" id="weatherResultData">
             <Header theme={theme} locationName={locationName} date={date} />
             <div className="flex flex-col gap-2 md:flex-row md:gap-8">
               <Temp
