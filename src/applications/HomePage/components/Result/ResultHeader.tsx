@@ -8,7 +8,7 @@ interface Props {
   date: Date;
 }
 
-const heading = (theme: Theme): string => {
+export const heading = (theme: Theme): string => {
   switch (theme) {
     case Theme.Sunny:
       return "Yay, it's sunny!";

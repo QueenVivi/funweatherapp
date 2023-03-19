@@ -15,8 +15,8 @@ const ResultDetails: FC<Props> = ({ details }) => {
     <dl className="flex flex-col gap-1">
       {details.map(
         ({ label, data, metric }) =>
-          data !== undefined && (
-            <div className="flex gap-1" key={label}>
+          data && (
+            <div className="weather-result-detail flex gap-1" key={label}>
               <dt className="after:content-[':']">{label}</dt>
               <dd>
                 {data}
