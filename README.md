@@ -11,6 +11,10 @@ React.js, Typescript, Next.js, API integration, Tailwind, Responsive web develop
 ## Collabrations:
 I woked closely with a product designer, who provided me with the high fidelity responsive design.
 
+## Screenshot
+
+![Screenshot 2023-04-18 at 11 17 59 am](https://user-images.githubusercontent.com/111481335/232644570-3d50ba58-c358-479c-be2b-21826c126859.png)
+
 ## Next steps and epic plans: 
 - Integrate with travel API
 - Calendar feature for customers to plan their activities
